@@ -102,7 +102,8 @@ class App extends Component {
   async renderPokemon(pokeData) {
     let allPokemonContainer = document.getElementById('poke-container');
     let pokeContainer = document.createElement("div");
-    pokeContainer.id = `${pokeData.name}` + `${pokeData.id}`;
+    pokeContainer.id = `${pokeData.name}` 
+    pokeContainer.id += `${pokeData.id}`;
     pokeData.types.forEach(function(type){
       pokeContainer.id += type['type']['name'];
     });
@@ -170,9 +171,10 @@ class App extends Component {
     let allPokemonContainer = document.getElementsByClassName('modal-content')[0];
     allPokemonContainer.id = `${pokeData.name}`;
     let pokeContainer = document.createElement("div");
-    pokeContainer.id = `${pokeData.name}` + " " + `${pokeData.id}`;
+    pokeContainer.id = `${pokeData.name}` 
+    pokeContainer.id += `${pokeData.id}`;
     pokeData.types.forEach(function(type){
-      pokeContainer.id += " " + type['type']['name'];
+      pokeContainer.id += type['type']['name'];
     });
     pokeContainer.classList.add('pokemon', 'ui', 'card');
 
@@ -232,7 +234,7 @@ class App extends Component {
     if (prevPokemon == null) {
       return;
     }
-    while (prevPokemon.style.display == "none") {
+    while (prevPokemon.style.display === "none") {
       prevPokemon = prevPokemon.previousElementSibling;
       if (prevPokemon == null) {
         return;
@@ -252,7 +254,7 @@ class App extends Component {
     if (nextPokemon == null) {
       return;
     }
-    while (nextPokemon.style.display == "none") {
+    while (nextPokemon.style.display === "none") {
       nextPokemon = nextPokemon.nextElementSibling;
       if (nextPokemon == null) {
         return;
